@@ -23,7 +23,7 @@ Users are able to:
 
 ### Screenshot
 
-![](./screenshot.jpg)
+![](/images/project-screenshot.jpg)
 
 ## My process
 
