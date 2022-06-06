@@ -3,30 +3,45 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
-
+  <link rel="stylesheet" href="style.css">
   <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
-  
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>  
+  <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@300;400;600&display=swap" rel="stylesheet">  
   <title>Frontend Mentor | Base Apparel coming soon page</title>
-
-  <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
-  <style>
-    .attribution { font-size: 11px; text-align: center; }
-    .attribution a { color: hsl(228, 45%, 44%); }
-  </style>
 </head>
 <body>
+  <header>
+    <img src="images/logo.svg" alt="Brand logo" class="logo">
+  </header>
+  
+  <section class="hero">
+    <img src="images/hero-mobile.jpg" alt="Hero image mobile" class="hero-img">
+    <img src="images/hero-desktop.jpg" alt="Hero image desktop" class="hero-img-desktop">
+  </section>
 
-  We're coming soon
-
-  Hello fellow shoppers! We're currently building our new fashion store. 
-  Add your email below to stay up-to-date with announcements and our launch deals.
-
-  Email Address
+  <main>
+    <h1 class="heading">
+      <span class="heading-word-1">We're</span>
+      <span class="heading-word-2">coming</span>
+      <span class="heading-word-3">soon</span>
+    </h1>
+    <p class="para">
+      Hello fellow shoppers! We're currently building our new fashion store. 
+      Add your email below to stay up-to-date with announcements and our launch deals.
+    </p>
+    <div class="email-address">
+      <input type="email" name="email" id="email" placeholder="Email Address" class="email-box">
+      <a href="#" class="btn"><img src="images/icon-arrow.svg" alt="Submit button" class="arrow"></a>
+    </div>
+  </main>
   
   <footer>
-    <p class="attribution">
-      Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
-      Coded by <a href="#">Your Name Here</a>.
+    <p class="footer-p">
+      Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank" class="footer-a">Frontend Mentor</a>
+    </p>
+    <p class="footer-p">
+      Coded by <a href="#" class="footer-a">Sai Kham</a>
     </p>
   </footer>
 </body>
