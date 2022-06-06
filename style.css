@@ -1,0 +1,260 @@
+/* Mobile first approach */
+*,
+*::before,
+*::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    line-height: 1.5;
+}
+
+
+:root {
+    /* Colors */
+    --de-red: hsl(0, 36%, 70%);
+    --soft-red: hsl(0, 93%, 68%);
+    --dark-red: hsl(0, 6%, 24%);
+    --white-linear: linear-gradient(135deg, hsl(0, 0%, 100%),hsl(0, 100%, 98%));
+    --red-linear: linear-gradient(135deg,hsl(0, 80%, 86%), hsl(0, 74%, 74%));
+    /* Font weight */
+    --font-light: 300;
+    --font-medium: 400;
+    --font-heavy: 600;
+}
+
+body {
+    font-family: 'Josefin Sans', sans-serif;
+    background-image: var(--white-linear);
+    display: flex;
+    flex-direction: column;
+}
+
+header {
+    padding: 30px 20px;
+}
+
+.logo {
+    transform: scale(0.8, 0.8);
+}
+
+/* Hero img takes up 100% of its container */
+.hero-img {
+    width: 100%;
+    height: 100%;
+}
+
+.hero-img-desktop {
+    display: none;
+}
+
+.heading {
+    text-transform: uppercase;
+    text-align: center;
+    line-height: 1.1;
+    letter-spacing: 0.35em;
+    margin: 40px 0 20px;
+    font-size: 2.2rem;
+}
+
+/* Each word is made "block" so that they start on new lines */
+.heading-word-1,
+.heading-word-2,
+.heading-word-3 {
+    display: block;
+}
+
+.heading-word-1 {
+    color: var(--de-red);
+    font-weight: var(--font-light)
+}
+
+.heading-word-2,
+.heading-word-3
+{
+    font-weight: var(--font-heavy);
+}
+
+.para {
+    color: var(--de-red);
+    padding: 0 20px;
+    text-align: center;
+    font-size: 0.82em;
+}
+
+.email-address {
+    display: flex;
+    justify-content: center;
+    margin: 30px auto 0;
+    width: 80%;
+}
+
+/* a link is made "inline-block" , so width and length can be set while still allows other element to be placed beside it. */
+.email-box {
+    display: inline-block;
+    width: 90%;
+    padding: 10px;
+    border: 1px solid var(--de-red);
+    border-radius: 20px;
+    color: var(--dark-red);
+    background-image: var(--white-linear);
+}
+
+.email-box::placeholder {
+    color: var(--de-red);
+}
+
+.email-box:focus {
+    outline: 1px solid var(--soft-red);
+}
+
+.btn {
+    display: inline-block;
+    display: flex;
+    background-image: var(--red-linear);
+    width: 20%;
+    margin-left: -15%; 
+    /* margin-left : so btn is over the email-box */
+    border-radius: 20px;
+    box-shadow: 0 5px 20px pink;
+}
+
+.btn:hover {
+    background-image: linear-gradient(135deg, hsl(0, 79%, 92%), hsl(0, 100%, 86%));
+}
+
+.arrow {
+    margin: auto;
+}
+
+footer {
+    margin: 40px auto 0;
+    padding: 20px;
+    text-align: center;
+    font-weight: var(--font-light);
+}
+
+.footer-p {
+    color: var(--de-red);
+}
+
+.footer-a,
+.footer-a:visited {
+    color: black;
+    text-decoration: underline var(--de-red);
+}
+
+@media (min-width: 767px) {
+    body {
+        display: grid;
+        grid-template-rows: 100px 1fr 100px;
+        grid-template-columns: 1fr 450px;
+        grid-template-areas: 'header img'
+        'main img'
+        'footer img';
+    }
+
+    header {
+        grid-area: header;
+    }
+
+    main {
+        grid-area: main;
+    }
+
+    footer {
+        grid-area: footer;
+    }
+
+    main {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .hero {
+        height: 100vh;
+        grid-area: img;
+    }
+
+    /* Hero img for mobile is hidden, and img for desktop is displayed */
+    .hero-img {
+        display: none;
+    }
+
+    
+    .hero-img-desktop {
+        display: block;
+        height: 100%;
+        width: 100%;
+    }
+
+    .email-address {
+        margin: 30px 10px 0;
+    }
+
+    footer {
+        margin: 0;
+    }
+}
+
+@media (min-width: 1023px) {
+    body {
+        grid-template-rows: 80px 1fr 80px;
+        grid-template-columns: 1fr 550px;
+        font-size: 20px;
+    }
+
+    header {
+        padding-left: 85px;
+    }
+
+    main {
+        padding: 0 100px;
+        align-items: flex-start;
+    }
+
+    .heading,
+    .para {
+        padding: 0;
+        text-align: start;
+    }
+
+    .heading {
+        font-size: 3rem;
+    }
+
+    .para {
+       width: 60%;
+    }
+
+    .email-address {
+        margin: 30px 0 0 -10px;
+        width: 70%;
+    }
+
+
+    footer {
+        padding-top: 10px;
+        padding-left: 100px;
+        text-align: start;
+        font-size: 0.9rem;
+    }
+}
+
+@media (min-width: 1439px) {
+    body {
+        grid-template-columns: 1fr 600px;
+        grid-template-rows: 80px 1fr 100px;
+        font-size: 1.5em;
+    }
+
+    .email-box {
+        padding: 20px 10px;
+        border-radius: 40px;
+    }
+
+    .btn {
+        border-radius: 40px;
+    }
+}
