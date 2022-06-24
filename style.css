@@ -33,6 +33,12 @@ header {
     padding: 30px 20px;
 }
 
+main {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
 .logo {
     transform: scale(0.8, 0.8);
 }
@@ -81,44 +87,80 @@ header {
     font-size: 0.82em;
 }
 
-.email-address {
+.form-control {
+    position: relative;
+}
+
+.submit {
     display: flex;
-    justify-content: center;
-    margin: 30px auto 0;
-    width: 80%;
+    height: 40px;
+    margin-top: 20px;
+    margin: 20px auto;
+    position: relative;
 }
 
-/* a link is made "inline-block" , so width and length can be set while still allows other element to be placed beside it. */
-.email-box {
-    display: inline-block;
-    width: 90%;
-    padding: 10px;
+.form-control small {
+    visibility: hidden;
+    display: block;
+    color: red;
+    position: absolute;
+    top: 45px;
+    left: 10px;
+}
+
+button {
+    position: absolute;
+    top: 0px;
+    right: 0;
+    width: 60px;
+    height: inherit;
+    background-image: var(--red-linear);
+    border-radius: 100vmax;
+    border: none;
+    display: flex;
+}
+
+button img {
+    margin: auto;
+}
+
+#email {
+    width: 250px;
     border: 1px solid var(--de-red);
-    border-radius: 20px;
-    color: var(--dark-red);
-    background-image: var(--white-linear);
+    border-radius: 100vmax;
+    padding-left: 10px;
+    background-color: transparent;
 }
 
-.email-box::placeholder {
+.form-control.success #email {
+    border-color: #2ecc71;
+}
+
+.form-control.error #email {
+    border-color: #e74c3c ;
+}
+
+.form-control.error small {
+    visibility: visible;
+    color: #e74c3c;
+}
+
+#email::placeholder {
     color: var(--de-red);
 }
 
-.email-box:focus {
+#email:focus {
     outline: 1px solid var(--soft-red);
 }
 
-.btn {
-    display: inline-block;
-    display: flex;
+#Submit {
     background-image: var(--red-linear);
-    width: 20%;
-    margin-left: -15%; 
-    /* margin-left : so btn is over the email-box */
-    border-radius: 20px;
-    box-shadow: 0 5px 20px pink;
+    margin: 0 0 0 -250%;
+    padding: 100% 200%;
+    border-radius: 100vmax;
 }
 
-.btn:hover {
+#Submit:hover {
     background-image: linear-gradient(135deg, hsl(0, 79%, 92%), hsl(0, 100%, 86%));
 }
 
@@ -143,6 +185,11 @@ footer {
     text-decoration: underline var(--de-red);
 }
 
+@media (min-width: 424px) {
+    #email {
+        width: 300px;
+    }
+}
 @media (min-width: 767px) {
     body {
         display: grid;
@@ -170,6 +217,10 @@ footer {
         flex-direction: column;
         align-items: center;
         justify-content: center;
+    }
+
+    #email {
+        width: 250px;
     }
 
     .hero {
@@ -203,6 +254,9 @@ footer {
         grid-template-rows: 80px 1fr 80px;
         grid-template-columns: 1fr 550px;
         font-size: 20px;
+        background-image: url(images/bg-pattern-desktop.svg);
+        background-repeat: no-repeat;
+        background-size: cover;
     }
 
     header {
@@ -214,6 +268,14 @@ footer {
         align-items: flex-start;
     }
 
+    form {
+        margin-left: 0;
+    }
+
+    #email {
+        width: 300px;
+    }
+
     .heading,
     .para {
         padding: 0;
@@ -222,10 +284,6 @@ footer {
 
     .heading {
         font-size: 3rem;
-    }
-
-    .para {
-       width: 60%;
     }
 
     .email-address {
@@ -258,3 +316,5 @@ footer {
         border-radius: 40px;
     }
 }
+
+
