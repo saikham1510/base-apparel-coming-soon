@@ -30,10 +30,15 @@
       Hello fellow shoppers! We're currently building our new fashion store. 
       Add your email below to stay up-to-date with announcements and our launch deals.
     </p>
-    <div class="email-address">
-      <input type="email" name="email" id="email" placeholder="Email Address" class="email-box">
-      <a href="#" class="btn"><img src="images/icon-arrow.svg" alt="Submit button" class="arrow"></a>
-    </div>
+    <form id="form">
+      <div class="form-control">
+        <div class="submit">
+          <input type="email" name="email" id="email" placeholder="Email Address" required>
+          <button type="submit" id="btn"><img src="images/icon-arrow.svg" alt="submit"></button>
+        </div>
+        <small>Error message</small>
+      </div>
+    </form>
   </main>
   
   <footer>
